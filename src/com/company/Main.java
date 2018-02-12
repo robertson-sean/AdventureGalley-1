@@ -6,17 +6,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         HashMap<String, Room> RoomList = new HashMap<String, Room>();
-        Room cave = new Room("cave","The cave is dark and damp");
-        Room arcade = new Room("arcade", "The arcade is bright, louf, and full of games.");
-        Room garage = new Room("garage", "The garage is full of cardboard boxes.");
-        RoomList.put("garage",garage);
-        RoomList.put("arcade",arcade);
-        RoomList.put("cave",cave);
+        RoomList.put("garage",new Room("garage", "The garage is full of cardboard boxes."));
+        RoomList.put("arcade",new Room("arcade", "The arcade is bright, loud, and full of games."));
+        RoomList.put("cave",new Room("cave","The cave is dark and damp"));
         Scanner reader = new Scanner(System.in);
         System.out.println("You have entered a room.");
         String prompt = reader.next();
         while(true) {
-            if(RoomList.containsKey(prompt)==true){
+            if(RoomList.containsKey(prompt)){
                 System.out.println(RoomList.get(prompt).getDescription());
             }
            else if (prompt.equals("look")) {
