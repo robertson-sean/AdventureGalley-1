@@ -20,7 +20,6 @@ public class Main {
                 System.out.println(RoomList.get(prompt).getDescription());
             }
            else if (prompt.equals("look")) {
-
                 System.out.println("The room is dark");
             }
             else if (prompt.equals("quit")) {
