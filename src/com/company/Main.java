@@ -11,11 +11,13 @@ public class Main {
         Scanner reader = new Scanner(System.in);
         System.out.println(curRoom.getDescription());
         String prompt = reader.next();
-
         while(true) {
-            if(curRoom.hasRoom(prompt)){
-                curRoom=curRoom.getRoom(prompt);
-                System.out.println(curRoom.getDescription());
+            if (prompt.equalsIgnoreCase("look")) {
+                System.out.println("The room is dark, there is a banana, a button, and a friend");
+            }
+           else if (prompt.equals("look")) {
+
+                System.out.println("The room is dark");
             }
            else if (prompt.equals("look")) {
 
