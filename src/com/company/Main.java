@@ -4,21 +4,12 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-
-        HashMap<String, Item> items = new HashMap<String, Item>();
-        items.put("Banana", new Item("Banana", "There are a bunch of weird spots on the banana"));
-        items.put("Button", new Item("Button", "This red button is marked \"self destruct\""));
-        items.put("Friend", new Item("Friend", "It's Beckett so its like a bad friend"));
-
-
-        HashMap<String, Room> rooms = new HashMap<String, Room>();
-        rooms.put("Arcade", new Room("Arcade", "There are two consoles and an air hockey table in the back"));
-        rooms.put("Cave", new Room("Cave", "It is dark and cold and spiderwebs everywhere"));
-        rooms.put("Garage", new Room("Garage", "There is an old bike and a broken car"));
+        Room curRoom = addRooms();
 
         Scanner reader = new Scanner(System.in);
-        System.out.println("You have entered a room");
+        System.out.println(curRoom.getDescription());
         String prompt = reader.next();
         while(true) {
             if (prompt.equalsIgnoreCase("look")) {
@@ -28,17 +19,34 @@ public class Main {
 
                 System.out.println("The room is dark");
             }
-            else if(rooms.containsKey(prompt)){
-                System.out.println(rooms.get(prompt).getDescription());
+           else if (prompt.equals("look")) {
+
+                System.out.println(curRoom.getDescription());
             }
-            else if (prompt.equalsIgnoreCase("quit")) {
-                System.out.println("goodbye...");
-                break;
-            }
+            else if (prompt.equals("quit")) break;
             else{
-                System.out.println("I'm sorry, I don't understand. Please try again: ");
+                System.out.println("You can't do that ");
             }
             prompt = reader.next();
         }
+    }
+    //This is a utility method to set up all the rooms and their connections.
+    //Returns the main Room.
+    private static Room addRooms() {
+        Room home = new Room("home", "You are in a simple gray room.");
+        Room cave = new Room("cave", "This room glitters with jewels.");
+        Room arcade = new Room("arcade","This  room is full of skee ball courts");
+        Room garage = new Room("garage","this room is full of cardboard boxes");
+        arcade.addRoom(home);
+        home.addRoom(garage);
+        garage.addRoom(home);
+        garage.addRoom(arcade);
+        arcade.addRoom(cave);
+        cave.addRoom(garage);
+        home.addRoom(cave);
+        home.addRoom(arcade);
+        cave.addRoom(home);
+        return home;
+
     }
 }
