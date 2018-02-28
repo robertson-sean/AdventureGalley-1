@@ -18,7 +18,17 @@ public class Main {
             else if (prompt.equalsIgnoreCase("look")) {
                 System.out.println(curRoom.getDescription());
             }
-            else if (prompt.equalsIgnoreCase("quit")) break;
+            else if (prompt.equalsIgnoreCase("quit")) {
+                System.out.println("Are you sure you want to quit? (y/n)");
+                String quitPrompt = reader.next();
+                if(quitPrompt.equalsIgnoreCase("y")) {
+                    System.out.println("Thanks for playing!");
+                    break;
+                }
+                else {
+                    System.out.println(curRoom.getDescription());
+                }
+            }
             else{
                 System.out.println("You can't do that ");
             }
