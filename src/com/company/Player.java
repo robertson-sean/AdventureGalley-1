@@ -1,33 +1,19 @@
 package com.company;
 
+import java.util.HashMap;
 public class Player {
     private String name;
-
-    public Player(String name) {
+    Inventory playerInventory= new Inventory() ;
+    public Player (String name ){
         this.name = name;
+
     }
 
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name;}
 
     public int health = 100;
-
-    public void youLost() {
-
-        if (health == 0)
-
-        {
-            System.out.println("You Died");
-            System.exit(0);
-        }
-
-    }
-
 
 }
