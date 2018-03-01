@@ -8,7 +8,10 @@ public class Main {
         Room curRoom = addRooms();
 
         Scanner reader = new Scanner(System.in);
-        System.out.println(curRoom.getDescription());
+        System.out.println(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
+
+        //Offer some help.
+
         String prompt = reader.next();
         while(true) {
             if(curRoom.hasRoom(prompt)) {
@@ -17,6 +20,9 @@ public class Main {
             }
             else if (prompt.equalsIgnoreCase("look")) {
                 System.out.println(curRoom.getDescription());
+            }
+            else if (prompt.equalsIgnoreCase("help")){
+                System.out.println("Type 'look' to explore your surroundings, Type 'quit' to exit the game, Type 'help' for help.");
             }
             else if (prompt.equalsIgnoreCase("quit")) break;
             else{
