@@ -7,9 +7,15 @@ public class Room {
 
     HashMap<String, Room> connectedRooms = new HashMap<String, Room>();
 
+    Inventory itemsInRoom = new Inventory();
+
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public String listItemsInRoom() {
+        return itemsInRoom.toString();
     }
 
     public boolean hasRoom(String name) {
