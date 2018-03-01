@@ -1,10 +1,13 @@
 package com.company;
 
+
 public class Player {
+    private Inventory inventory;
     private String name;
 
     public Player(String name) {
         this.name = name;
+        inventory = new Inventory();
     }
 
 
@@ -28,6 +31,5 @@ public class Player {
         }
 
     }
-
 
 }

@@ -1,7 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
-public class Reader{
+public class Reader {
     private Scanner input = new Scanner(System.in);
 
 
