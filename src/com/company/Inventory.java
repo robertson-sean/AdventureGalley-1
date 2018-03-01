@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class Inventory {
 
+
     HashMap<String, Item> inventory = new HashMap<String, Item>();
 
     public Inventory() {
@@ -11,6 +12,7 @@ public class Inventory {
     }
 
     //Calling this method will insert this Item into the hashMap with its name as the key.
+
     public void addItem(Item i) {
         inventory.put(i.getName(), i);
     }
