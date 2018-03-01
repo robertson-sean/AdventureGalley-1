@@ -10,6 +10,9 @@ public class Main {
 
         Scanner reader = new Scanner(System.in);
         System.out.println("what is your name?");
+        System.out.println(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
+
+
         String prompt = reader.next();
 
         String name = prompt;
@@ -40,6 +43,11 @@ public class Main {
                     System.out.println(curRoom.getDescription());
                 }
             }
+            else if (prompt.equalsIgnoreCase("help")){
+                System.out.println("Type 'look' to explore your surroundings, Type 'quit' to exit the game, Type 'help' for help.");
+            }
+            else if (prompt.equalsIgnoreCase("quit")) break;
+
             else{
                 System.out.println("You can't do that ");
             }
