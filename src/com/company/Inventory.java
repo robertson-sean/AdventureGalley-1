@@ -1,6 +1,7 @@
 package com.company;
 import java.util.HashMap;
 
+
 public class Inventory {
 
 
@@ -22,6 +23,13 @@ public class Inventory {
 
     public boolean hasItem(String name) {
         return inventory.containsKey(name);
+    }
+
+    /*
+    Do not call this method unless you are sure the item is in the inventory.
+     */
+    public Item getItem(String name) {
+        return inventory.get(name);
     }
 
     //Check inventory
