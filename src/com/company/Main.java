@@ -11,22 +11,35 @@ public class Main {
         Scanner reader = new Scanner(System.in);
         System.out.println("what is your name?");
         String prompt = reader.next();
+
         String name = prompt;
         Player user = new Player(name);
         System.out.println(curRoom.getDescription());
         prompt = reader.next();
 
         while(true) {
-            if(curRoom.hasRoom(prompt)){
-                curRoom=curRoom.getRoom(prompt);
+            if(curRoom.hasRoom(prompt)) {
+                curRoom = curRoom.getRoom(prompt);
                 System.out.println(curRoom.getDescription());
 
             }
+
             else if (prompt.equals("look")) {
 
                 System.out.println(curRoom.getDescription()+"You can go to "+curRoom.getConnectedRooms());
+
             }
-            else if (prompt.equals("quit")) break;
+            else if (prompt.equalsIgnoreCase("quit")) {
+                System.out.println("Are you sure you want to quit? (y/n)");
+                String quitPrompt = reader.next();
+                if(quitPrompt.equalsIgnoreCase("y")) {
+                    System.out.println("Thanks for playing!");
+                    break;
+                }
+                else {
+                    System.out.println(curRoom.getDescription());
+                }
+            }
             else{
                 System.out.println("You can't do that ");
             }
@@ -41,14 +54,18 @@ public class Main {
         Room cave = new Room("cave", "This room glitters with jewels.");
         Room arcade = new Room("arcade","This  room is full of skee ball courts");
         Room garage = new Room("garage","this room is full of cardboard boxes");
+
         arcade.addRoom(home);
-        home.addRoom(garage);
-        garage.addRoom(home);
-        garage.addRoom(arcade);
         arcade.addRoom(cave);
-        cave.addRoom(garage);
+
+        home.addRoom(garage);
         home.addRoom(cave);
         home.addRoom(arcade);
+
+        garage.addRoom(home);
+        garage.addRoom(arcade);
+
+        cave.addRoom(garage);
         cave.addRoom(home);
         return home;
 

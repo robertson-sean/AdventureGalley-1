@@ -1,4 +1,5 @@
 package com.company;
+
 import java.util.HashMap;
 public class Player {
     private String name;

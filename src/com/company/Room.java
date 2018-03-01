@@ -29,6 +29,7 @@ public class Room {
     public void addRoom(Room room) {
         connectedRooms.put(room.getName(),room);
     }
+    
     public String getName() {
         return name;
     }
