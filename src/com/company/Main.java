@@ -9,13 +9,16 @@ public class Main {
 
         Scanner reader = new Scanner(System.in);
         System.out.println(curRoom.getDescription());
+        //prints out items in starter room for the player to see
+        System.out.print("In this room, there is:");
+        System.out.println(curRoom.listItemsInRoom());
         // offer help, since this is the player's first time playing
         String prompt = reader.next();
         while(true) {
             if(curRoom.hasRoom(prompt)) {
                 curRoom = curRoom.getRoom(prompt);
                 System.out.println(curRoom.getDescription());
-                System.out.print("In this room there is:");
+                System.out.print("In this room, there is:");
                 System.out.print(curRoom.listItemsInRoom());
             }
             else if (prompt.equalsIgnoreCase("look")) {
@@ -35,8 +38,8 @@ public class Main {
     private static Room addRooms() {
         Room home = new Room("home", "You are in a simple gray room.");
         Room cave = new Room("cave", "This room glitters with jewels.");
-        Room arcade = new Room("arcade", "This  room is full of skee ball courts");
-        Room garage = new Room("garage", "this room is full of cardboard boxes");
+        Room arcade = new Room("arcade", "This room is full of skee ball courts");
+        Room garage = new Room("garage", "This room is full of cardboard boxes");
 
         arcade.addRoom(home);
         arcade.addRoom(cave);
