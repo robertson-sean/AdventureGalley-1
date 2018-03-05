@@ -6,6 +6,6 @@ package com.company;
 public class Banana extends Item {
 
     Banana() {
-        super("banana", "a delicious yellow banana.");
+        super("banana", "a delicious yellow banana.", true);
     }
 }
