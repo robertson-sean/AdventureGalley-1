@@ -2,9 +2,11 @@ package com.company;
 
 public class Player {
     private String name;
+    private Inventory inventory;
 
     public Player(String name) {
         this.name = name;
+        inventory = new Inventory();
     }
 
 

@@ -9,6 +9,7 @@ public class Main {
 
         Scanner reader = new Scanner(System.in);
         System.out.println(curRoom.getDescription());
+        // offer help, since this is the first the user is playing.
         String prompt = reader.next();
         while(true) {
             if(curRoom.hasRoom(prompt)) {
@@ -18,7 +19,9 @@ public class Main {
             else if (prompt.equalsIgnoreCase("look")) {
                 System.out.println(curRoom.getDescription());
             }
-            else if (prompt.equalsIgnoreCase("quit")) break;
+            else if (prompt.equalsIgnoreCase("quit")) {
+
+            }
             else{
                 System.out.println("You can't do that ");
             }
