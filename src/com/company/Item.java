@@ -11,6 +11,7 @@ public class Item {
         this.description = description;
         this.edible = edible;
     }
+
     public String getName() {
         return name;
     }
