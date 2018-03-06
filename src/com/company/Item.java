@@ -4,12 +4,14 @@ public class Item {
     private String name;
     private String description;
     private boolean edible;
+    private boolean throwable;
 
 
-    public Item(String name, String description, boolean edible) {
+    public Item(String name, String description, boolean edible, boolean throwable) {
         this.name = name;
         this.description = description;
         this.edible = edible;
+        this.throwable = throwable;
     }
 
     public String getName() {
@@ -34,5 +36,13 @@ public class Item {
 
     public void setEdible(boolean edible) {
         this.edible = edible;
+    }
+
+    public void isThrowable() {
+        return throwable;
+    }
+
+    public void setThrowable(boolean throwable) {
+        this.throwable = throwable;
     }
 }
