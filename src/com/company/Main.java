@@ -68,7 +68,7 @@ public class Main {
         home.addRoom(cave);
         home.addRoom(arcade);
 
-        home.itemsInRoom.addItem(new Item("apple", "A delicious red apple", true));
+        home.itemsInRoom.addItem(new Banana());
         home.itemsInRoom.addItem(new Item("note", "Welcome to our game.", false));
         garage.itemsInRoom.addItem(new Item("Hammer", "A very heavy duty hammer.", false));
         garage.itemsInRoom.addItem(new Item("Drill","Does not come with a drill bit.", false));
