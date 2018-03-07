@@ -5,7 +5,7 @@ package com.company;
  */
 public class Banana extends Item {
 
-    Banana() {
+    public Banana() {
         super("banana", "a delicious yellow banana.", true);
     }
 }
