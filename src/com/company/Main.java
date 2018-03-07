@@ -8,13 +8,14 @@ public class Main {
         Room curRoom = addRooms();
 
         Scanner reader = new Scanner(System.in);
-        System.out.println("what is your name?");
+        Reader input = new Reader();
+        String username = input.readLine("What is your name?");
         System.out.println(curRoom.getDescription());
         //prints out items in starter room for the player to see
-        System.out.print("In this room, there is:");
+        System.out.println("In this room, there is:");
         System.out.println(curRoom.listItemsInRoom());
         // offer help, since this is the player's first time playing
-        System.out.println(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
+        input.readLine(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
 
         String prompt = reader.next();
 
@@ -68,7 +69,7 @@ public class Main {
         home.addRoom(cave);
         home.addRoom(arcade);
 
-        home.itemsInRoom.addItem(new Item("apple", "A delicious red apple", true));
+        home.itemsInRoom.addItem(new Banana());
         home.itemsInRoom.addItem(new Item("note", "Welcome to our game.", false));
         garage.itemsInRoom.addItem(new Item("Hammer", "A very heavy duty hammer.", false));
         garage.itemsInRoom.addItem(new Item("Drill","Does not come with a drill bit.", false));
