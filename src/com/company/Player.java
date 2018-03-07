@@ -19,6 +19,11 @@ public class Player {
     }
 
     public int health = 100;
+    public int hunger = 25;
+
+    //public String getState(){
+    //    return "You currently have: "+health+" Health "+hunger+" Hunger";
+   // }
 
     public void youLost() {
 
