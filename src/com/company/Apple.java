@@ -1,0 +1,23 @@
+package com.company;
+
+import java.time.Duration;
+import java.util.Date;
+
+/**
+ * Created by andy on 3/7/18.
+ */
+public class Apple extends Item {
+
+    private Date birthdate;
+    private Date bestByDate;
+
+    public Apple() {
+        super("apple", "A delicious red apple.", true);
+        birthdate = new Date();
+        bestByDate = new Date(birthdate.getTime() + 5*60);
+    }
+
+    public String getDescription() {
+        return "I am an apple and was born on " + birthdate.toString();
+    }
+}
