@@ -1,6 +1,6 @@
 package com.company;
 
-public class Item {
+public abstract class Item {
     private String name;
     private String description;
     private boolean edible;
@@ -11,6 +11,12 @@ public class Item {
         this.description = description;
         this.edible = edible;
     }
+
+    /*
+    The handle method accepts a word and figures out the proper reply
+    (in the form of a string) to that word.
+     */
+    public abstract String handle(String s);
 
     public String getName() {
         return name;
