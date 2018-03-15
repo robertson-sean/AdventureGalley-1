@@ -9,6 +9,10 @@ public class Book extends Item {
         super("book", "Wbat a lovely book of magic spells.", false);
     }
 
+    public Book(String name, String description) {
+        super(name, description, false);
+    }
+
     @Override
     public String handle(String s) {
         if (s.equalsIgnoreCase("examine")) {

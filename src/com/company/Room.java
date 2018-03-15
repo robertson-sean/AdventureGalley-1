@@ -10,8 +10,6 @@ public class Room {
     HashMap<String, Room> connectedRooms = new HashMap<String, Room>();
     Inventory roomInventory = new Inventory();
 
-    Inventory itemsInRoom = new Inventory();
-
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
@@ -19,7 +17,7 @@ public class Room {
     }
 
     public String listItemsInRoom() {
-        return itemsInRoom.toString();
+        return roomInventory.toString();
     }
 
     public boolean hasRoom(String name) {
@@ -29,7 +27,6 @@ public class Room {
     public Room getRoom(String name) {
         return connectedRooms.get(name);
     }
-
 
     //This method gets a Room, then uses its name to add it to the list of connected rooms.
     public void addRoom(Room room) {
@@ -54,5 +51,17 @@ public class Room {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void addItem(Item i) {
+        roomInventory.addItem(i);
+    }
+
+    public boolean hasItem(String name) {
+        return roomInventory.hasItem(name);
+    }
+
+    public Item getItem(String name) {
+        return roomInventory.getItem(name);
     }
 }

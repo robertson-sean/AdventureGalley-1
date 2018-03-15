@@ -15,29 +15,24 @@ public class Main {
         //prints out items in starter room for the player to see
         System.out.println("In this room, there is:");
         System.out.println(curRoom.listItemsInRoom());
+
         // offer help, since this is the player's first time playing
         String prompt = input.readLine(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
 
-//        String prompt = reader.next();
-//
-//        String name = prompt;
-//        Player user = new Player(name);
-//        System.out.println(curRoom.getDescription());
-//        String prompt = reader.nextLine();
 
         while(true) {
             String[] words = prompt.split(" ");
             String directObject = words[words.length-1];
             String verb = words[0];
-            if(curRoom.itemsInRoom.hasItem(directObject)) {
-                Item whichItem = curRoom.itemsInRoom.getItem(directObject);
+            if(curRoom.hasItem(directObject)) {
+                Item whichItem = curRoom.getItem(directObject);
                 String response = whichItem.handle(verb);
                 System.out.println(response);
             } else if(curRoom.hasRoom(verb)) {
-                    curRoom = curRoom.getRoom(verb);
-                    System.out.println(curRoom.getDescription());
-                    System.out.print("In this room, there is:");
-                    System.out.print(curRoom.listItemsInRoom());
+                curRoom = curRoom.getRoom(verb);
+                System.out.println(curRoom.getDescription());
+                System.out.print("In this room, there is:");
+                System.out.print(curRoom.listItemsInRoom());
             }
             else if (verb.equalsIgnoreCase("look")) {
                 System.out.println(curRoom.getDescription());
@@ -70,7 +65,8 @@ public class Main {
         Room arcade = new Room("arcade","This  room is full of skee ball courts");
         Room garage = new Room("garage","this room is full of cardboard boxes");
 
-        home.itemsInRoom.addItem(new Book());
+        home.addItem(new Book());
+        home.addItem(new Apple());
 
         arcade.addRoom(home);
         arcade.addRoom(cave);
