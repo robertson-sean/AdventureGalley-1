@@ -1,6 +1,5 @@
 package com.company;
 
-import java.time.Duration;
 import java.util.Date;
 
 /**
@@ -12,7 +11,7 @@ public class Apple extends Item {
     private Date bestByDate;
 
     public Apple() {
-        super("apple", "A delicious red apple.", true);
+        super("Pencil", "An ordinary looking orange pencil", true);
         birthdate = new Date();
         bestByDate = new Date(birthdate.getTime() + 5*60);
     }
