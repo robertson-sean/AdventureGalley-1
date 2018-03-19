@@ -7,9 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Room curRoom = addRooms();
 
-        Scanner reader = new Scanner(System.in);
         Reader input = new Reader();
-//        String username = input.readLine("What is your name?");
         System.out.println(curRoom.getDescription());
 
         //prints out items in starter room for the player to see
@@ -39,7 +37,7 @@ public class Main {
             }
             else if (verb.equalsIgnoreCase("quit")) {
                 System.out.println("Are you sure you want to quit? (y/n)");
-                String quitPrompt = reader.next();
+                String quitPrompt = input.readLine();
                 if(quitPrompt.equalsIgnoreCase("y")) {
                     System.out.println("Thanks for playing!");
                     break;
@@ -54,7 +52,7 @@ public class Main {
             else{
                 System.out.println("You can't do that ");
             }
-            prompt = reader.nextLine();
+            prompt = input.readLine();
         }
     }
     //This is a utility method to set up all the rooms and their connections.
