@@ -75,15 +75,6 @@ public class Main {
         home.addRoom(cave);
         home.addRoom(arcade);
 
-//        home.itemsInRoom.addItem(new Banana());
-//        home.itemsInRoom.addItem(new Item("note", "Welcome to our game.", false));
-//        garage.itemsInRoom.addItem(new Item("Hammer", "A very heavy duty hammer.", false));
-//        garage.itemsInRoom.addItem(new Item("Drill","Does not come with a drill bit.", false));
-//        arcade.itemsInRoom.addItem(new Item("controller", "This is a video game controller or an unknown game system.", false));
-//        arcade.itemsInRoom.addItem(new Item("jacket", " 80's style jacket with teal and purple detailing.", false));
-//        cave.itemsInRoom.addItem(new Item("charcoal stick", " A stick of charcoal that looks like it has been on the walls", false));
-//        cave.itemsInRoom.addItem(new Item("arrowhead", "An arrowhead make out of what seems to be some sort of bone", false));
-
         garage.addRoom(home);
         garage.addRoom(arcade);
 
