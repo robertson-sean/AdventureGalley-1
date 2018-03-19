@@ -1,31 +1,33 @@
 package com.company;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        World crazy = new World(new Room );
+        World crazy = new World(addRooms() );
         Room curRoom = addRooms();
 
         Scanner reader = new Scanner(System.in);
-        System.out.println("what is your name?");
+
         Reader input = new Reader();
-        String username = input.readLine("What is your name?");
-        System.out.println(curRoom.getDescription());
+         Player user = new Player(input.readLine("What is your Name?"));
+        System.out.println("Hello "+user.getName());
+        //String username = input.readLine("What is your name?");
         //prints out items in starter room for the player to see
-        System.out.print("In this room, there is:");
-        System.out.println(curRoom.listItemsInRoom());
+        System.out.print(curRoom.getDescription()+" In this room, there is: "+curRoom.listItemsInRoom());
+
 
         // offer help, since this is the player's first time playing
-        System.out.println(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
-        input.readLine(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
+        System.out.println( " Type your command. If you need help, type 'help.'");
 
         String prompt = reader.next();
 
         String name = prompt;
-        Player user = new Player(name);
-        System.out.println(curRoom.getDescription());
+
+        System.out.println(curRoom.getDescription()+" You can go to "+curRoom.getConnectedRooms());
         prompt = reader.next();
 
         while(true) {
@@ -73,9 +75,9 @@ public class Main {
         Room arcade = new Room("arcade","This  room is full of skee ball courts");
         Room garage = new Room("garage","this room is full of cardboard boxes");
 
-        home.addItem(new Book());
+        home.addItem(new Book("book","it is a book","these are some words"));
         home.addItem(new Apple());
-
+        garage.addItem(new Mug());
         arcade.addRoom(home);
         arcade.addRoom(cave);
 
