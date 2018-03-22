@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Items;
 
 public abstract class Item {
     private String name;

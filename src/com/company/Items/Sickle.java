@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Items;
 public class Sickle extends Item{
 
     public Sickle (String name, String description, boolean edible) {

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Items;
 
 /**
  * Created by andy on 3/5/18.

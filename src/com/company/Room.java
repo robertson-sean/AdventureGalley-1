@@ -1,4 +1,6 @@
 package com.company;
+import com.company.Items.Item;
+
 import java.util.HashMap;
 import java.util.Set;
 

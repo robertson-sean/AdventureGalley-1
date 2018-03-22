@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.Items.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,9 +18,9 @@ public class Main {
         String prompt = input.readLine(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
 
         while(true) {
-            String arr[] = prompt.split(" ", 2);
-            String verb = arr[0];  //This is the throwaway word
-            String directObject = arr[1];
+            String arr[] = prompt.split(" ");
+            String verb = arr[0];  //This is the word we will send to the object's handle method
+            String directObject = arr[arr.length-1]; //This is the last word, which we will use to find the object
             if(curRoom.hasItem(directObject)) {
                 Item whichItem = curRoom.getItem(directObject);
                 String response = whichItem.handle(verb);
