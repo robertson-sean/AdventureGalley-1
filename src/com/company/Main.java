@@ -23,8 +23,11 @@ public class Main {
         while(true) {
             String arr[] = prompt.split(" ", 2);
             String verb = arr[0];  //This is the throwaway word
-            String directObject = arr[1];
-
+            String directObject = null;
+            int numWords = arr.length;
+            if(numWords>=2) {
+                directObject = arr[1];
+            }
             if(curRoom.hasItem(directObject)) {
                 Item whichItem = curRoom.getItem(directObject);
                 String response = whichItem.handle(verb);
