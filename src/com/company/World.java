@@ -1,7 +1,6 @@
 package com.company;
 
-import java.util.Map;
-import java.util.HashMap;
+import com.company.Items.*;
 
 public class World {
     String name;
