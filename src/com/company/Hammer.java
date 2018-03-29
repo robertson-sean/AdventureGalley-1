@@ -3,7 +3,7 @@ package com.company;
 public class Hammer extends Item {
 
     public Hammer() {
-        super("hammer", "a rusty old hammer", false, true);
+        super("hammer", "a rusty old hammer", false);
     }
     public String handle(String s) {
         if(s.equalsIgnoreCase("examine")) {

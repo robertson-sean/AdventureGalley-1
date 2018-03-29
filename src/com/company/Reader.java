@@ -3,8 +3,12 @@ import javax.xml.bind.SchemaOutputResolver;
 import java.util.Scanner;
 
 public class Reader {
-    private Scanner input = new Scanner(System.in);
+    private Scanner input;
 
+
+    public Reader() {
+        input = new Scanner(System.in);
+    }
 
     public int readInt(String prompt){
         System.out.print(prompt);
@@ -17,5 +21,9 @@ public class Reader {
         System.out.println("");
         String str = input.nextLine();
         return str;
+    }
+
+    public String readLine() {
+        return input.nextLine();
     }
 }

@@ -1,9 +1,6 @@
 package com.company;
 
-/**
- * Created by andy on 3/8/18.
- */
-public class Book extends Item {
+public class Book extends Item{
 
     private String content;
 
@@ -61,5 +58,5 @@ public class Book extends Item {
         else {
             return "I don't know how to " + s + " a book.";
         }
-    }
+}
 }

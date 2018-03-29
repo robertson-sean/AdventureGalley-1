@@ -12,9 +12,6 @@ public abstract class Item {
         this.edible = edible;
     }
 
-    public Item(String baseball, String s, boolean b, boolean b1) {
-    }
-
     /*
     The handle method accepts a word and figures out the proper reply
     (in the form of a string) to that word.
