@@ -42,6 +42,8 @@ public class World {
 
         home.addItem(new Book("book","it is a book","these are some words"));
         home.addItem(new Apple());
+        home.addItem(new Banana());
+        home.addItem(new Hammer());
         garage.addItem(new Mug());
         arcade.addRoom(home);
         arcade.addRoom(cave);

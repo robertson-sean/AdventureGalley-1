@@ -1,5 +1,7 @@
 package com.company.Items;
 
+import com.company.Interactions.Item;
+
 public class Mug extends Item {
     public Mug(){
         super("Mug","An artisan mug",false);

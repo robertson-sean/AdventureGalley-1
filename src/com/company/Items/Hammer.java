@@ -1,15 +1,14 @@
 package com.company.Items;
 
+import com.company.Interactions.*;
+import com.company.Executables.*;
+
 public class Hammer extends Item {
 
     public Hammer() {
         super("hammer", "a rusty old hammer", false);
+        addExecutable("examine", new Examine());
+        addExecutable("reverse", new Reverse());
     }
-    public String handle(String s) {
-        if(s.equalsIgnoreCase("examine")) {
-            return this.getDescription(); 
-        } else {
-                return "You can't do that";
-            }
-    }
+
 }

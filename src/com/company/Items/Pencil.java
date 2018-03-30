@@ -1,5 +1,7 @@
 package com.company.Items;
 
+import com.company.Interactions.Item;
+
 public class Pencil extends Item {
 
     public Pencil () {

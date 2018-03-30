@@ -1,5 +1,8 @@
 package com.company.Items;
-public class Sickle extends Item{
+
+import com.company.Interactions.Item;
+
+public class Sickle extends Item {
 
     public Sickle (String name, String description, boolean edible) {
         super("sickle", "Communism is not love. Communism is a hammer which we use to crush the enemy", false);

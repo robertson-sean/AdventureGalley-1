@@ -1,9 +1,6 @@
 package com.company;
 
-import com.company.Items.*;
-
-
-import java.util.Scanner;
+import com.company.Interactions.Item;
 
 public class Main {
 
@@ -18,7 +15,7 @@ public class Main {
         System.out.println(curRoom.listItemsInRoom());
 
         // offer help, since this is the player's first time playing
-        String prompt = input.readLine(curRoom.getDescription()+ " Type your command. If you need help, type 'help.'");
+        String prompt = input.readLine(curRoom.getDescription()+ " Type your command. If you need help, type 'help'.");
 
         while(true) {
             String arr[] = prompt.split(" ", 2);

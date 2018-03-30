@@ -1,5 +1,5 @@
 package com.company;
-import com.company.Items.Item;
+import com.company.Interactions.Item;
 
 import java.util.HashMap;
 

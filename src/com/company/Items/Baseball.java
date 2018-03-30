@@ -1,5 +1,7 @@
 package com.company.Items;
 
+import com.company.Interactions.Item;
+
 public class Baseball extends Item {
 
     Baseball() {

@@ -1,6 +1,8 @@
 package com.company.Items;
 
-public class Book extends Item{
+import com.company.Interactions.Item;
+
+public class Book extends Item {
 
     private String content;
 
