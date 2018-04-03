@@ -23,7 +23,7 @@ public class Main {
             String directObject = null;
             int numWords = arr.length;
             if(numWords>=2) {
-                directObject = arr[1];
+                directObject = arr[numWords-1];
             }
             if(curRoom.hasItem(directObject)) {
                 Item whichItem = curRoom.getItem(directObject);
