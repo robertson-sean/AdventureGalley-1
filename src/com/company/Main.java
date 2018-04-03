@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Room curRoom = World.getWorld("Crazy").getStartingRoom();
+        //tset
 
         Reader input = new Reader();
         System.out.println(curRoom.getDescription());
